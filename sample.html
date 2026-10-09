@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Informasi layanan pengiriman cargo, pelacakan resi, cek ongkos kirim, dan lokasi Nusantara Cargo." />
+  <meta name="theme-color" content="#061b3f" />
   <title>Beranda - Nusantara Cargo</title>
   <link rel="icon" href="/uploads/media/favicon.png?v=1789967850" />
   <link rel="stylesheet" href="/assets/style.css" />
@@ -91,11 +93,11 @@
     <section class="tools container">
       <div class="tool redbox">
         <h3>Cek Resi</h3>
-        <form action="/tracking.php" method="get"><div><input name="resi" placeholder="No. Resi" required /><button type="submit">LACAK</button></div></form>
+        <form action="/tracking.php" method="get" aria-label="Formulir pelacakan resi"><div><input name="resi" aria-label="Nomor resi" placeholder="No. Resi" autocomplete="off" required /><button type="submit">LACAK</button></div></form>
       </div>
       <div class="tool graybox">
         <h3>Cek Ongkos Kirim</h3>
-        <form action="/ongkir.php" method="get"><div class="four"><input name="asal" placeholder="Kota Asal" required /><input name="tujuan" placeholder="Kota Tujuan" required /><input name="berat" type="number" value="1" min="1" placeholder="Kg" /><button type="submit">Cari</button></div></form>
+        <form action="/ongkir.php" method="get" aria-label="Formulir cek ongkos kirim"><div class="four"><input name="asal" aria-label="Kota asal" placeholder="Kota Asal" autocomplete="address-level2" required /><input name="tujuan" aria-label="Kota tujuan" placeholder="Kota Tujuan" autocomplete="off" required /><input name="berat" aria-label="Berat kiriman dalam kilogram" type="number" value="1" min="1" step="1" placeholder="Kg" required /><button type="submit">Cari</button></div></form>
       </div>
       <div class="tool redbox">
         <h3>Lokasi</h3>
@@ -156,7 +158,7 @@
       <div><strong>Nusantara Cargo</strong><small><span class="nc-chat-dot" style="margin-right:5px"></span>Customer Service Online</small></div>
       <button type="button" class="nc-chat-close" id="nc-chat-close" aria-label="Tutup Live Chat">×</button>
     </div>
-    <div class="nc-chat-messages" id="nc-chat-messages"><div style="text-align:center;color:#7d899a;font-size:12px;padding:28px 15px">Halo 👋<br />Silakan kirim pesan kepada Customer Service kami.</div></div>
+    <div class="nc-chat-messages" id="nc-chat-messages" role="log" aria-relevant="additions text"><div style="text-align:center;color:#7d899a;font-size:12px;padding:28px 15px">Halo 👋<br />Silakan kirim pesan kepada Customer Service kami.</div></div>
     <form class="nc-chat-form" id="nc-chat-form">
       <div class="nc-chat-fields"><input id="nc-chat-name" placeholder="Nama" maxlength="120" autocomplete="name" required /><input id="nc-chat-phone" placeholder="No. WhatsApp" maxlength="50" autocomplete="tel" /></div>
       <textarea id="nc-chat-message" placeholder="Tulis pesan..." maxlength="3000" required></textarea>
@@ -219,9 +221,16 @@
       function closeChat() {
         panel.classList.remove('open');
         launcher.setAttribute('aria-expanded', 'false');
+        if (timer) { window.clearInterval(timer); timer = null; }
       }
       launcher.addEventListener('click', openChat);
       closeButton.addEventListener('click', closeChat);
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && panel.classList.contains('open')) {
+          closeChat();
+          launcher.focus();
+        }
+      });
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
