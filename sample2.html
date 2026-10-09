@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nusantara Cargo — layanan pengiriman cargo, cek resi, cek ongkos kirim, dan lokasi.">
+  <meta name="theme-color" content="#071b3b">
+  <title>Beranda | Nusantara Cargo — Sample 2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nc: { navy: '#071b3b', blue: '#123a6b', red: '#df1725', mist: '#f3f6fa', ink: '#18283f' }
+          },
+          boxShadow: {
+            soft: '0 16px 45px rgba(7,27,59,.10)',
+            lift: '0 22px 55px rgba(7,27,59,.16)'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-white text-nc-ink antialiased">
+  <!-- Top contact strip -->
+  <div class="bg-nc-navy text-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-xs sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <span class="flex items-center gap-2 text-white/80"><span class="text-nc-red">●</span> Customer Service 24 Jam</span>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-1">
+        <a class="transition hover:text-red-300" href="/tracking.php">⌕ Cek Resi</a>
+        <a class="transition hover:text-red-300" href="/ongkir.php">▣ Cek Ongkir</a>
+        <a class="transition hover:text-red-300" href="/admin/login.php">♙ Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main navigation -->
+  <header class="relative z-30 border-b border-slate-100 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <a href="/" aria-label="Nusantara Cargo beranda" class="flex shrink-0 items-center gap-3">
+        <img src="/uploads/media/logo.png?v=1789967850" alt="Nusantara Cargo" class="h-12 max-w-[190px] object-contain sm:h-14" onerror="this.style.display='none'">
+        <span class="hidden text-lg font-black tracking-tight text-nc-navy">NUSANTARA <span class="text-nc-red">CARGO</span></span>
+      </a>
+      <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-2xl text-nc-navy transition hover:bg-slate-50 md:hidden" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav id="main-nav" class="absolute left-0 right-0 top-full hidden border-t border-slate-100 bg-white px-4 py-4 shadow-soft md:static md:flex md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none lg:gap-6" aria-label="Navigasi utama">
+        <a class="nav-link py-2 text-sm font-semibold text-nc-navy hover:text-nc-red" href="/">Beranda</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/layanan.php">Layanan</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/tracking.php">Cek Resi</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/ongkir.php">Cek Ongkir</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/lokasi.php">Lokasi</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/berita.php">Berita</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/tentang.php">Tentang Kami</a>
+        <a class="nav-link py-2 text-sm font-semibold text-slate-600 hover:text-nc-red" href="/kontak.php">Kontak</a>
+        <a href="https://wa.me/6285285397865" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center justify-center rounded-xl bg-nc-red px-4 py-3 text-sm font-bold text-white shadow-md transition hover:bg-red-700 md:mt-0 md:whitespace-nowrap">WhatsApp <span class="ml-2 hidden lg:inline">+62 852 8539 7865</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero: asset path is inferred from existing sample.html, not verified against live website -->
+    <section class="relative isolate overflow-hidden bg-nc-navy">
+      <div class="absolute inset-0 -z-10">
+        <img src="/uploads/media/banner_home.png?v=1789967850" alt="" class="h-full w-full object-cover object-center" fetchpriority="high" onerror="this.style.display='none'">
+        <div class="absolute inset-0 bg-gradient-to-r from-nc-navy/90 via-nc-navy/65 to-nc-navy/20"></div>
+      </div>
+      <div class="mx-auto grid min-h-[360px] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-24">
+        <div class="max-w-2xl text-white">
+          <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-white/90"><span class="h-2 w-2 rounded-full bg-nc-red"></span> Solusi pengiriman cargo</p>
+          <h1 class="text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">Kirim lebih mudah.<br><span class="text-red-400">Sampai dengan yakin.</span></h1>
+          <p class="mt-5 max-w-xl text-base leading-7 text-white/80 sm:text-lg">Solusi pengiriman untuk kebutuhan bisnis dan personal. Cari layanan, lacak resi, atau periksa ongkos kirim dari satu tempat.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/layanan.php" class="inline-flex items-center justify-center rounded-xl bg-nc-red px-6 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-red-700">Lihat Layanan <span class="ml-2">→</span></a>
+            <a href="/lokasi.php" class="inline-flex items-center justify-center rounded-xl border border-white/50 bg-white/10 px-6 py-3.5 font-bold text-white transition hover:bg-white/20">Temukan Lokasi</a>
+          </div>
+        </div>
+        <div class="hidden justify-end lg:flex">
+          <div class="w-full max-w-md rounded-3xl border border-white/20 bg-white/10 p-7 text-white shadow-2xl backdrop-blur-sm">
+            <div class="mb-6 flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-nc-red text-2xl">↗</div>
+              <div><p class="text-lg font-extrabold">Cargo yang praktis</p><p class="mt-1 text-sm text-white/70">Akses informasi pengiriman dengan cepat.</p></div>
+            </div>
+            <div class="space-y-4 border-t border-white/15 pt-5 text-sm">
+              <div class="flex items-center gap-3"><span class="text-red-300">✓</span><span>Pelacakan nomor resi</span></div>
+              <div class="flex items-center gap-3"><span class="text-red-300">✓</span><span>Pencarian ongkos kirim</span></div>
+              <div class="flex items-center gap-3"><span class="text-red-300">✓</span><span>Informasi lokasi layanan</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick tools -->
+    <section class="relative z-10 mx-auto -mt-7 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid overflow-hidden rounded-2xl bg-white shadow-lift md:grid-cols-3">
+        <div class="p-6 sm:p-7">
+          <div class="mb-4 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-xl text-nc-red">⌕</span><div><h2 class="font-extrabold text-nc-navy">Cek Resi</h2><p class="text-xs text-slate-500">Lacak status kiriman</p></div></div>
+          <form action="/tracking.php" method="get" class="flex gap-2" aria-label="Formulir pelacakan resi">
+            <label class="sr-only" for="tracking-number">Nomor resi</label>
+            <input id="tracking-number" name="resi" required autocomplete="off" placeholder="Masukkan nomor resi" class="min-w-0 flex-1 rounded-xl border border-slate-200 px-3 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-nc-red focus:ring-4 focus:ring-red-100">
+            <button class="rounded-xl bg-nc-red px-4 py-3 text-sm font-extrabold text-white transition hover:bg-red-700" type="submit">Lacak</button>
+          </form>
+        </div>
+        <div class="border-y border-slate-100 bg-slate-50/70 p-6 sm:p-7 md:border-x md:border-y-0">
+          <div class="mb-4 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-xl text-nc-blue">▣</span><div><h2 class="font-extrabold text-nc-navy">Cek Ongkos Kirim</h2><p class="text-xs text-slate-500">Cari estimasi pengiriman</p></div></div>
+          <form action="/ongkir.php" method="get" class="grid grid-cols-2 gap-2" aria-label="Formulir cek ongkos kirim">
+            <label class="sr-only" for="origin-city">Kota asal</label><input id="origin-city" name="asal" required placeholder="Kota asal" autocomplete="address-level2" class="min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm outline-none focus:border-nc-blue focus:ring-4 focus:ring-blue-100">
+            <label class="sr-only" for="destination-city">Kota tujuan</label><input id="destination-city" name="tujuan" required placeholder="Kota tujuan" class="min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm outline-none focus:border-nc-blue focus:ring-4 focus:ring-blue-100">
+            <label class="sr-only" for="shipment-weight">Berat kiriman dalam kilogram</label><input id="shipment-weight" name="berat" type="number" value="1" min="1" step="1" required placeholder="Berat (kg)" class="min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm outline-none focus:border-nc-blue focus:ring-4 focus:ring-blue-100">
+            <button type="submit" class="rounded-xl bg-nc-navy px-4 py-3 text-sm font-extrabold text-white transition hover:bg-nc-blue">Cari Tarif</button>
+          </form>
+        </div>
+        <a href="/lokasi.php" class="group p-6 transition hover:bg-slate-50 sm:p-7">
+          <div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-xl text-nc-red">⌖</span><div><h2 class="font-extrabold text-nc-navy">Lokasi Kami</h2><p class="mt-1 text-xs text-slate-500">Temukan titik layanan</p></div><span class="ml-auto text-xl text-nc-red transition group-hover:translate-x-1">→</span></div>
+          <p class="mt-4 text-sm leading-6 text-slate-600">Lihat informasi lokasi untuk membantu kebutuhan pengiriman Anda.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-xs font-extrabold uppercase tracking-[.22em] text-nc-red">Layanan Nusantara Cargo</p>
+        <h2 class="mt-3 text-3xl font-black tracking-tight text-nc-navy sm:text-4xl">Pengiriman cargo sesuai kebutuhan Anda</h2>
+        <p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">Pilih jenis layanan yang sesuai dengan karakteristik barang, tujuan, dan kebutuhan pengiriman Anda.</p>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="group rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-soft">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-3xl">🚚</div><h3 class="mt-5 text-xl font-extrabold text-nc-navy">Cargo Darat</h3><p class="mt-3 leading-7 text-slate-600">Pilihan pengiriman untuk kebutuhan antarkota dan antarwilayah melalui jalur darat.</p><a href="/layanan.php" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-nc-red">Pelajari layanan <span class="transition group-hover:translate-x-1">→</span></a>
+        </article>
+        <article class="group rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-soft">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-3xl">✈️</div><h3 class="mt-5 text-xl font-extrabold text-nc-navy">Cargo Udara</h3><p class="mt-3 leading-7 text-slate-600">Alternatif pengiriman untuk kebutuhan yang mengutamakan kecepatan waktu.</p><a href="/layanan.php" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-nc-red">Pelajari layanan <span class="transition group-hover:translate-x-1">→</span></a>
+        </article>
+        <article class="group rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-soft">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-50 text-3xl">🚢</div><h3 class="mt-5 text-xl font-extrabold text-nc-navy">Cargo Laut</h3><p class="mt-3 leading-7 text-slate-600">Opsi pengiriman untuk barang berat atau bervolume besar, sesuai ketersediaan rute.</p><a href="/layanan.php" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-nc-red">Pelajari layanan <span class="transition group-hover:translate-x-1">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Value proposition -->
+    <section class="bg-nc-mist">
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:px-8 lg:py-20">
+        <div>
+          <p class="text-xs font-extrabold uppercase tracking-[.22em] text-nc-red">Mengapa memilih kami</p>
+          <h2 class="mt-3 text-3xl font-black tracking-tight text-nc-navy sm:text-4xl">Informasi jelas untuk perjalanan kiriman Anda</h2>
+          <p class="mt-5 leading-7 text-slate-600">Mulai dari mencari layanan hingga memeriksa status kiriman, akses informasi yang Anda perlukan melalui menu yang tersedia.</p>
+          <a href="/tentang.php" class="mt-7 inline-flex items-center gap-2 rounded-xl bg-nc-navy px-5 py-3 font-bold text-white transition hover:bg-nc-blue">Tentang Kami <span>→</span></a>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><span class="text-2xl text-nc-red">01</span><h3 class="mt-4 font-extrabold text-nc-navy">Jangkauan</h3><p class="mt-2 text-sm leading-6 text-slate-600">Informasi layanan untuk kebutuhan pengiriman berbagai wilayah.</p></div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><span class="text-2xl text-nc-red">02</span><h3 class="mt-4 font-extrabold text-nc-navy">Pelacakan</h3><p class="mt-2 text-sm leading-6 text-slate-600">Akses menu cek resi untuk menelusuri status kiriman.</p></div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm"><span class="text-2xl text-nc-red">03</span><h3 class="mt-4 font-extrabold text-nc-navy">Dukungan</h3><p class="mt-2 text-sm leading-6 text-slate-600">Hubungi tim layanan melalui kanal kontak yang tersedia.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="relative overflow-hidden rounded-3xl bg-nc-navy px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:px-14 lg:py-12">
+        <div class="absolute -right-10 -top-16 h-64 w-64 rounded-full border-[36px] border-white/5"></div>
+        <div class="relative max-w-2xl"><p class="text-xs font-bold uppercase tracking-[.2em] text-red-300">Butuh bantuan?</p><h2 class="mt-3 text-2xl font-black sm:text-3xl">Diskusikan kebutuhan pengiriman Anda</h2><p class="mt-3 leading-7 text-white/70">Hubungi Customer Service untuk mendapatkan informasi lebih lanjut.</p></div>
+        <a href="https://wa.me/6285285397865" target="_blank" rel="noopener noreferrer" class="relative mt-7 inline-flex shrink-0 items-center justify-center rounded-xl bg-nc-red px-6 py-3.5 font-extrabold text-white transition hover:bg-red-700 lg:mt-0">Hubungi WhatsApp <span class="ml-2">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#06152e] text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_1.2fr] lg:px-8 lg:py-14">
+      <div>
+        <img src="/uploads/media/logo_horizontal_light.png?v=1789967850" alt="Nusantara Cargo" class="mb-5 max-h-20 w-60 object-contain object-left" onerror="this.style.display='none'">
+        <p class="max-w-sm text-sm leading-7 text-white/65">Informasi layanan pengiriman cargo, pelacakan resi, dan kontak Nusantara Cargo.</p>
+      </div>
+      <div><h2 class="mb-5 text-sm font-extrabold uppercase tracking-wider">Layanan Kami</h2><ul class="space-y-3 text-sm text-white/70"><li><a class="hover:text-white" href="/layanan.php">Cargo Darat</a></li><li><a class="hover:text-white" href="/layanan.php">Cargo Udara</a></li><li><a class="hover:text-white" href="/layanan.php">Cargo Laut</a></li><li><a class="hover:text-white" href="/layanan.php">Packing</a></li><li><a class="hover:text-white" href="/layanan.php">Gudang</a></li><li><a class="hover:text-white" href="/layanan.php">Asuransi</a></li></ul></div>
+      <div><h2 class="mb-5 text-sm font-extrabold uppercase tracking-wider">Informasi</h2><ul class="space-y-3 text-sm text-white/70"><li><a class="hover:text-white" href="/tentang.php">Tentang Kami</a></li><li><a class="hover:text-white" href="/tracking.php">Cek Resi</a></li><li><a class="hover:text-white" href="/ongkir.php">Cek Ongkir</a></li><li><a class="hover:text-white" href="/lokasi.php">Lokasi</a></li><li><a class="hover:text-white" href="/berita.php">Berita</a></li><li><a class="hover:text-white" href="/kontak.php">Kontak</a></li></ul></div>
+      <div><h2 class="mb-5 text-sm font-extrabold uppercase tracking-wider">Hubungi Kami</h2><ul class="space-y-4 text-sm leading-6 text-white/70"><li><span class="mr-2 text-red-400">☎</span>Customer Service 24 Jam</li><li><span class="mr-2 text-red-400">◔</span><a href="https://wa.me/6285285397865" class="hover:text-white">+62 852 8539 7865</a></li><li><span class="mr-2 text-red-400">✉</span><a href="mailto:info@nusantara-cargo.com" class="hover:text-white">Email Customer Service</a></li><li><span class="mr-2 text-red-400">⌖</span>ITC ROXY MAS, Komplek Ruko No.11 Blok C3, Cideng, Gambir, Jakarta Pusat 10150</li></ul></div>
+    </div>
+    <div class="border-t border-white/10"><div class="mx-auto max-w-7xl px-4 py-5 text-xs text-white/50 sm:px-6 lg:px-8">© 2026 Nusantara Cargo. All Rights Reserved. <span class="ml-2">Sample reconstruction — Tailwind CSS</span></div></div>
+  </footer>
+
+  <!-- Live chat widget. Requires the original /chat_api.php endpoint to work. -->
+  <button id="chat-launcher" type="button" aria-label="Buka Live Chat" aria-controls="chat-panel" aria-expanded="false" class="fixed bottom-5 right-5 z-[60] inline-flex items-center gap-2 rounded-full bg-nc-red px-5 py-3.5 font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-red-700"><span class="h-2.5 w-2.5 rounded-full bg-emerald-300 ring-4 ring-emerald-300/20"></span>Live Chat</button>
+  <section id="chat-panel" aria-label="Live Chat Nusantara Cargo" class="fixed bottom-20 right-4 z-[60] hidden h-[min(520px,72vh)] w-[min(370px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl sm:right-5">
+    <div class="flex items-center justify-between bg-nc-navy px-4 py-4 text-white"><div><h2 class="font-extrabold">Nusantara Cargo</h2><p class="mt-1 text-xs text-white/70">Customer Service</p></div><button id="chat-close" type="button" aria-label="Tutup Live Chat" class="rounded-lg px-3 py-1 text-2xl hover:bg-white/10">×</button></div>
+    <div id="chat-messages" role="log" aria-relevant="additions text" class="flex-1 space-y-2 overflow-y-auto bg-slate-50 p-4"><p class="rounded-xl bg-white p-3 text-sm leading-6 text-slate-600 shadow-sm">Halo! Silakan kirim pesan kepada Customer Service kami.</p></div>
+    <form id="chat-form" class="border-t border-slate-100 bg-white p-3">
+      <div class="mb-2 grid grid-cols-2 gap-2"><label class="sr-only" for="chat-name">Nama</label><input id="chat-name" maxlength="120" autocomplete="name" required placeholder="Nama" class="min-w-0 rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-nc-red"><label class="sr-only" for="chat-phone">Nomor WhatsApp</label><input id="chat-phone" maxlength="50" autocomplete="tel" placeholder="No. WhatsApp" class="min-w-0 rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-nc-red"></div>
+      <label class="sr-only" for="chat-message">Pesan</label><textarea id="chat-message" maxlength="3000" required placeholder="Tulis pesan..." rows="2" class="w-full resize-none rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-nc-red"></textarea>
+      <button type="submit" class="mt-2 w-full rounded-lg bg-nc-red px-4 py-3 text-sm font-extrabold text-white hover:bg-red-700">Kirim Pesan</button>
+      <p class="mt-2 text-center text-[10px] text-slate-400">Fitur chat membutuhkan endpoint backend.</p>
+    </form>
+  </section>
+
+  <script>
+    (function () {
+      var menuToggle = document.getElementById('menu-toggle');
+      var nav = document.getElementById('main-nav');
+      menuToggle.addEventListener('click', function () {
+        var opening = nav.classList.contains('hidden');
+        nav.classList.toggle('hidden', !opening);
+        menuToggle.setAttribute('aria-expanded', String(opening));
+        menuToggle.textContent = opening ? '×' : '☰';
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 767px)').matches) {
+            nav.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.textContent = '☰';
+          }
+        });
+      });
+
+      var api = '/chat_api.php';
+      var panel = document.getElementById('chat-panel');
+      var launcher = document.getElementById('chat-launcher');
+      var closeButton = document.getElementById('chat-close');
+      var box = document.getElementById('chat-messages');
+      var form = document.getElementById('chat-form');
+      var nameInput = document.getElementById('chat-name');
+      var phoneInput = document.getElementById('chat-phone');
+      var messageInput = document.getElementById('chat-message');
+      var timer = null;
+
+      function loadChat() {
+        fetch(api + '?action=customer_messages', { cache: 'no-store' })
+          .then(function (response) { if (!response.ok) throw new Error('Request gagal'); return response.json(); })
+          .then(function (data) {
+            if (!data.ok) return;
+            if (data.conversation) {
+              nameInput.value = data.conversation.customer_name || nameInput.value;
+              phoneInput.value = data.conversation.customer_phone || phoneInput.value;
+            }
+            box.replaceChildren();
+            if (!data.messages || !data.messages.length) {
+              var empty = document.createElement('p');
+              empty.className = 'rounded-xl bg-white p-3 text-sm text-slate-600 shadow-sm';
+              empty.textContent = 'Halo! Silakan kirim pesan kepada Customer Service kami.';
+              box.appendChild(empty);
+              return;
+            }
+            data.messages.forEach(function (message) {
+              var bubble = document.createElement('div');
+              bubble.className = 'max-w-[85%] rounded-xl p-3 text-sm leading-5 shadow-sm ' + (message.sender_type === 'admin' ? 'mr-auto border border-slate-100 bg-white text-slate-700' : 'ml-auto bg-red-600 text-white');
+              var text = document.createElement('p');
+              text.textContent = message.message || '';
+              bubble.appendChild(text);
+              if (message.created_at) {
+                var timestamp = document.createElement('p');
+                timestamp.className = 'mt-1 text-[10px] opacity-60';
+                timestamp.textContent = message.created_at;
+                bubble.appendChild(timestamp);
+              }
+              box.appendChild(bubble);
+            });
+            box.scrollTop = box.scrollHeight;
+          })
+          .catch(function () { /* Endpoint may not exist in this sample environment. */ });
+      }
+      function openChat() {
+        panel.classList.remove('hidden');
+        panel.classList.add('flex');
+        launcher.setAttribute('aria-expanded', 'true');
+        loadChat();
+        if (!timer) timer = window.setInterval(loadChat, 5000);
+      }
+      function closeChat() {
+        panel.classList.add('hidden');
+        panel.classList.remove('flex');
+        launcher.setAttribute('aria-expanded', 'false');
+        if (timer) { window.clearInterval(timer); timer = null; }
+      }
+      launcher.addEventListener('click', openChat);
+      closeButton.addEventListener('click', closeChat);
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && !panel.classList.contains('hidden')) {
+          closeChat();
+          launcher.focus();
+        }
+      });
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var name = nameInput.value.trim();
+        var phone = phoneInput.value.trim();
+        var message = messageInput.value.trim();
+        if (!name || !message) return;
+        var data = new FormData();
+        data.append('action', 'customer_send');
+        data.append('name', name);
+        data.append('phone', phone);
+        data.append('message', message);
+        var button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.textContent = 'Mengirim...';
+        fetch(api, { method: 'POST', body: data })
+          .then(function (response) { if (!response.ok) throw new Error('Request gagal'); return response.json(); })
+          .then(function (result) {
+            if (result.ok) { messageInput.value = ''; loadChat(); }
+            else window.alert(result.error || 'Pesan gagal dikirim.');
+          })
+          .catch(function () { window.alert('Koneksi ke Live Chat gagal. Pastikan endpoint tersedia.'); })
+          .finally(function () { button.disabled = false; button.textContent = 'Kirim Pesan'; });
+      });
+    }());
+  </script>
+</body>
+</html>
